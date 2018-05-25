@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<style>
+	</style>
+</head>
+<body id="body" class="body">
+	<main class="bg">
+		<h1 class="rubrik">Free Real Estate</h1>
+		<div class="row">
+			<div class="column">
+				<img src="1.jpg" style="width:85%" id="bild1" class="img" onclick="disco()">
+			</div>
+			<div class="column">
+				<img src="2.jpg" style="width:85%" id="bild2" class="img">
+			</div>
+			<div class="column">
+				<img src="3.jpg" style="width:85%" id="bild3" class="img" onclick="bomb()">
+			</div>
+		</div>
+	</main>
+</body>
+<script type="text/javascript">
+	
+	var bakgrund = document.getElementById("body");
+	var bild1 = document.getElementById("bild1");
+	var bild2 = document.getElementById("bild2");
+	var bild3 = document.getElementById("bild3");
+	var musik = 0;
+	var musik2 = new Audio('mashup.mp3');
+
+	function disco() {
+    bakgrund.classList.toggle("body2");
+    bakgrund.classList.toggle("body");
+    bild1.classList.toggle("negativ");
+    if (musik == 0) {
+    	musik2.play();
+    	musik++;
+    } else {
+    	musik2.pause();
+    	musik--;
+    }
+
+}
+    function bomb() {
+    bakgrund.classList.toggle("body3");
+    bakgrund.classList.toggle("body");
+    document.getElementById("bild3").style.animation = "rödbomb 1s";
+    document.getElementById("bild1").style.display = "none";
+    document.getElementById("bild2").style.display = "none";
+    document.getElementById("bild3").style.marginLeft = "250%";
+    new Audio('boom.mp3').play()
+    }
+
+</script>
+</html>
